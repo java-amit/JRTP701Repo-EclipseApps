@@ -1,8 +1,6 @@
 package com.nt.service;
 
-/**
- * Hello world!
- */
+
 
 public class App {
 	
