@@ -2,7 +2,7 @@ package com.nt.service;
 
 
 
-public class App {
+public class App  {
 	
 	public int sum (int a, int b){
 		return a+b;
