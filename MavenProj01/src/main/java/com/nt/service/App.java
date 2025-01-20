@@ -14,6 +14,11 @@ public class App  {
 		return x*y;
 	}
 	
+	public String reverse (String name) {
+		StringBuffer sb=new StringBuffer(name);
+		return sb.reverse().toString();
+	}
+	
     public static void main(String[] args) {
     	App app = new App();
         System.out.println("sum is::"+app.sum(10, 20));
