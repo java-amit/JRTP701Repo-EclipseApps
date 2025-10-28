@@ -15,7 +15,7 @@ public class ArithmeticOperationsController {
 		
 		try {
 			log.info("performing arithmatic operaion");
-		float result = 100/0.0f;
+		float result = 100/0;
 		log.info("Arithmetic operation completed sucessfully");
 		return "result is::"+result;
 		}
