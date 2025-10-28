@@ -11,12 +11,12 @@ public class ArithmeticOperationsController {
 
 	@GetMapping("/div")
 	public String div() {
-		log.info("At begning of div() method");
+		log.trace("At begning of div() method");
 		
 		try {
-			log.info("performing arithmatic operaion");
+			log.trace("performing arithmatic operaion");
 		float result = 100/0;
-		log.info("Arithmetic operation completed sucessfully");
+		log.trace("Arithmetic operation completed sucessfully");
 		return "result is::"+result;
 		}
 		catch (Exception e) {

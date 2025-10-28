@@ -13,9 +13,9 @@ public class WishMessageOperationsController {
 	
 	@GetMapping("/greet")
 	public ResponseEntity<String> showMessage(){
-		logger.info("At the begning of the showMessage() method");
+		logger.debug("At the begning of the showMessage() method");
 		String msg= "Good Morning";
-		logger.info("At the end of the showMessage() method");
+		logger.debug("At the end of the showMessage() method");
 		
 		return new ResponseEntity<String>(msg,HttpStatus.OK);
 	}
