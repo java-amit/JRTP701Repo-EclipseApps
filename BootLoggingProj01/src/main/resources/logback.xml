@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- ================= Console Appender ================= -->
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d [%thread] %-5level %-50logger{40} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- ================= Rolling File Appender ================= -->
+    <appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- Current active log file -->
+        <file>MyApp.log</file>
+
+        <encoder>
+            <pattern>%d [%thread] %-5level %-50logger{40} - %msg%n</pattern>
+        </encoder>
+
+
+        
+        <!-- Size and Time-based rolling policy (creates new file daily) -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Log file name pattern (daily rotation) -->
+            <fileNamePattern>MyApp.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+
+			<maxFileSize>1MB</maxFileSize>
+            <!-- Keep logs for last 10 days -->
+            <maxHistory>10</maxHistory>
+
+            <!-- Total size limit for all archived logs -->
+            <totalSizeCap>3GB</totalSizeCap>
+            <cleanHistoryOnStart>false</cleanHistoryOnStart>
+        </rollingPolicy>
+        
+        
+        
+    </appender>
+
+    <!-- ================= Root Logger (INFO Level) ================= -->
+    <root level="INFO">
+        <appender-ref ref="Console" />
+        <appender-ref ref="RollingFile" />
+    </root>
+
+    <!-- ================= Custom Logger (DEBUG for specific package) ================= -->
+    <logger name="com.nt.level" level="DEBUG">
+        <appender-ref ref="Console" />
+        <appender-ref ref="RollingFile" />
+    </logger>
+
+</configuration>
